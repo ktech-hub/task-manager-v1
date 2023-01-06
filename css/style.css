@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 2em 0;
+}
+
+#main-header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.main {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.create-form,
+#items-list {
+    flex-basis: 48vw;
+}
+
+.todo-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px #888;
+}
+
+#items-list {
+    /* list-style: decimal-leading-zero; */
+    padding: 0 2em;
+}
+
+.list-item {
+    padding: 5px;
+}
+
+.list-item span::after {
+    margin: 0 5px;
+}
+
+.cancel-icon::after {
+    content: '\00D7';
+    float: right;
+    text-shadow: 0 0 5px #888;
+}
+
+.edit-icon::after {
+    content: '\2710';
+    float: right;
+    text-shadow: 0 0 5px #888;
+    rotate: 170deg;
+}
+
+.cancel-icon:hover:after {
+    color: red;
+}
+
+.edit-icon:hover:after {
+    color: green;
+}
+
+.cancel-icon:hover,
+.edit-icon:hover {
+    cursor: pointer;
+}
+
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: dimgray;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+#modal {
+    position: relative;
+    box-shadow: 0 0 5px #888;
+    z-index: 3;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 100px;
+    width: 80%;
+    background-color: #fff;
+}
+
+.modal-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 50px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: red;
+}
+
+.btn-success {
+    background-color: green;
+}
+
+.btn-text-white {
+    color: #fff;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.d-none {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .create-form,
+    #items-list {
+        min-width: 100%;
+    }
+
+    #items-list {
+        margin-top: 25px;
+    }
+}
